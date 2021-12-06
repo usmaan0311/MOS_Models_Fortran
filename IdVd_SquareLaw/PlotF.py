@@ -10,4 +10,5 @@ for (i,v) in zip(file,Vg):
     plt.plot(V,I, label=f'Vg={round(v,2)} V')
 
 plt.legend()
+plt.savefig('IdVd.png',dpi=1200,bbox_inches='tight')
 plt.show()
