@@ -8,7 +8,9 @@ for (i,v) in zip(file,Vg):
     df=pd.read_csv(i, sep='\s+', header=None).dropna(axis=1)
     V,I=df.iloc[:,0], df.iloc[:,1]
     plt.plot(V,I, label=f'Vg={round(v,2)} V')
+    plt.ylabel('Id (A)')
+    plt.xlabel('Vd (V)')
 
 plt.legend()
-plt.savefig('IdVd.png',dpi=1200,bbox_inches='tight')
+plt.savefig('IdVd.png',bbox_inches='tight')
 plt.show()
