@@ -1,17 +1,17 @@
 module InitCond
         implicit none
+        real*8, private, parameter::Epsilon0=8.854e-14
+        real*8, private, parameter::Epsilonox=Epsilon0*3.9
+        real*8, private, parameter::EpsilonS=Epsilon0*11.4
+        real*8, private, parameter::tox=2e-7
+        real*8, private, parameter::Na=1e+17
+        real*8, private, parameter::ni=1e+10
+        real*8, private, parameter::q=1.6e-19
+        real*8, private, parameter::Cox=Epsilonox/tox
+        
         real*8, public, parameter::kt=0.026
         real*8, public::Vfb=0.21
-        real*8, public, parameter::Epsilon0=8.854e-14
-        real*8, public, parameter::Epsilonox=Epsilon0*3.9
-        real*8, public, parameter::EpsilonS=Epsilon0*11.4
-        real*8, public, parameter::tox=2e-7
-        real*8, public, parameter::Na=1e+17
-        real*8, public, parameter::ni=1e+10
-        real*8, public, parameter::q=1.6e-19
-        
         real*8, public, parameter::phif=kt*log(Na/ni)
-        real*8, public, parameter::Cox=Epsilonox/tox
         real*8, public, parameter::gamma=sqrt(2*q*Na*EpsilonS)/Cox
         public::IC
         contains
